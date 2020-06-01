@@ -7,7 +7,6 @@
  */
 
 #include "ExternalEeprom.h"
-#include <Arduino.h>
 
 ExternalEeprom::ExternalEeprom(uint8_t deviceAddress)
     : EepromBasedWiredDevice(0x50 | (deviceAddress & (uint8_t) 0x07)) {
