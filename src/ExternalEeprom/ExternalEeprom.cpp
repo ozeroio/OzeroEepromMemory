@@ -83,7 +83,11 @@ int32_t ExternalEeprom::readBytes(int32_t address, uint8_t *buf, int32_t len) {
 int32_t ExternalEeprom::setBytes(int32_t address, uint8_t b, int32_t len) {
   int32_t written = 0, remaining = len, size = min(len, MAX_AUXILIARY_BUFFER_SIZE);
   uint8_t buf[size];
-  memset((void *) buf, b, size);
+
+  // Memset
+  for (int32_t i = 0; i < size; i++) {
+    buf[i] = b;
+  }
   while (remaining > 0) {
     int32_t w = writeBytes(address + written, buf, min(remaining, size));
     if (w < 0) {
