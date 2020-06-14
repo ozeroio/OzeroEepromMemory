@@ -25,7 +25,7 @@ int32_t ExternalMappedEeprom::writeBlock(int32_t address, uint8_t *buf, int32_t 
   return eeprom->writeBlock(mappedAddress, buf, len);
 }
 
-int ExternalMappedEeprom::readBlock(int32_t address, uint8_t *buf, int32_t len) {
+int32_t ExternalMappedEeprom::readBlock(int32_t address, uint8_t *buf, int32_t len) {
   int32_t mappedAddress = (address + startAddress);
   if (mappedAddress >= endAddress) {
     return 0;
