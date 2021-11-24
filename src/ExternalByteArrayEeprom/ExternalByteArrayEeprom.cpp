@@ -8,8 +8,8 @@
 
 #include "ExternalByteArrayEeprom.h"
 
-ExternalByteArrayEeprom::ExternalByteArrayEeprom(uint8_t *byteArray, int32_t deviceSize)
-    : ExternalEeprom(0x00, 0x10, deviceSize), byteArray(byteArray) {
+ExternalByteArrayEeprom::ExternalByteArrayEeprom(uint8_t *byteArray, int32_t deviceSize): ExternalEeprom(0), byteArray(byteArray) {
+    setDeviceSize(deviceSize);
 }
 
 // TODO: missing some boundaries check.
