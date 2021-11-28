@@ -11,6 +11,10 @@
 ExternalByteArrayEeprom::ExternalByteArrayEeprom(uint8_t *byteArray, int32_t deviceSize)
     : ExternalEeprom(0), byteArray(byteArray) {
   setDeviceSize(deviceSize);
+
+  // Write operations respect page boundaries. Therefore, having page size set is necessary.
+  // Since this is a byte array, the whole array can be seen as a 1-page space.
+  setPageSize(deviceSize);
 }
 
 int32_t ExternalByteArrayEeprom::writeBlock(int32_t address, uint8_t *buf, int32_t len) {
