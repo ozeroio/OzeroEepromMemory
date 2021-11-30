@@ -9,12 +9,12 @@
 #ifndef __OZEROIO_EXTERNAL_EEPROM_H__
 #define __OZEROIO_EXTERNAL_EEPROM_H__ 1
 
-#ifndef max
-#define max(x, y) (((x) > (y)) ? (x) : (y))
+#ifndef _max
+#define _max(x, y) (((x) > (y)) ? (x) : (y))
 #endif
 
-#ifndef min
-#define min(x, y) (((x) < (y)) ? (x) : (y))
+#ifndef _min
+#define _min(x, y) (((x) < (y)) ? (x) : (y))
 #endif
 
 #include <EepromBasedWiredDevice/EepromBasedWiredDevice.h>

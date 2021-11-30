@@ -26,14 +26,14 @@ int32_t ExternalEeprom::writeBytes(int32_t address, uint8_t *buf, int32_t len) {
   if (room <= 0) {
     return 0;
   }
-  remaining = min(room, len);
+  remaining = _min(room, len);
 
   // Eeprom devices are page bounded for writing. Attempting to write beyond the page boundaries in a single
   // operation it case the data address to roll-over and previous data will be overwritten.
   // The approach is to write blocks not longer than the remaining of the current page.
   while (remaining > 0) {
     room = pageRemainingRoom(address);
-    length = min(room, remaining);
+    length = _min(room, remaining);
     int16_t w = writeBlock(address, buf, length);
     if (w == 0) {
 
@@ -81,7 +81,7 @@ int32_t ExternalEeprom::readBytes(int32_t address, uint8_t *buf, int32_t len) {
 }
 
 int32_t ExternalEeprom::setBytes(int32_t address, uint8_t b, int32_t len) {
-  int32_t written = 0, remaining = len, size = min(len, MAX_AUXILIARY_BUFFER_SIZE);
+  int32_t written = 0, remaining = len, size = _min(len, MAX_AUXILIARY_BUFFER_SIZE);
   uint8_t buf[size];
 
   // Memset
@@ -89,7 +89,7 @@ int32_t ExternalEeprom::setBytes(int32_t address, uint8_t b, int32_t len) {
     buf[i] = b;
   }
   while (remaining > 0) {
-    int32_t w = writeBytes(address + written, buf, min(remaining, size));
+    int32_t w = writeBytes(address + written, buf, _min(remaining, size));
     if (w < 0) {
       return w;
     } else if (w == 0) {

@@ -18,8 +18,8 @@ ExternalByteArrayEeprom::ExternalByteArrayEeprom(uint8_t *byteArray, int32_t dev
 }
 
 int32_t ExternalByteArrayEeprom::writeBlock(int32_t address, uint8_t *buf, int32_t len) {
-  address = max(address, 0);
-  len = min(len, getDeviceSize() - address);
+  address = _max(address, 0);
+  len = _min(len, getDeviceSize() - address);
   for (int i = 0; i < len; i++) {
     byteArray[address + i] = buf[i];
   }
@@ -28,8 +28,8 @@ int32_t ExternalByteArrayEeprom::writeBlock(int32_t address, uint8_t *buf, int32
 
 // TODO: missing some boundaries check.
 int32_t ExternalByteArrayEeprom::readBlock(int32_t address, uint8_t *buf, int32_t len) {
-  address = max(address, 0);
-  len = min(len, getDeviceSize() - address);
+  address = _max(address, 0);
+  len = _min(len, getDeviceSize() - address);
   for (int i = 0; i < len; i++) {
     buf[i] = byteArray[address + i];
   }

@@ -21,7 +21,7 @@ int32_t ExternalMappedEeprom::writeBlock(int32_t address, uint8_t *buf, int32_t 
     return 0;
   }
   int32_t available = (endAddress - mappedAddress);
-  len = min(len, available);
+  len = _min(len, available);
   return eeprom->writeBlock(mappedAddress, buf, len);
 }
 
@@ -31,5 +31,5 @@ int32_t ExternalMappedEeprom::readBlock(int32_t address, uint8_t *buf, int32_t l
     return 0;
   }
   int32_t available = (endAddress - mappedAddress);
-  return eeprom->readBlock(mappedAddress, buf, min(available, len));
+  return eeprom->readBlock(mappedAddress, buf, _min(available, len));
 }
