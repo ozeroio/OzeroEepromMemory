@@ -1,0 +1,5 @@
+/storage0/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/cmake-build-espressif32/CMakeFiles/Production.dir
+/storage0/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/cmake-build-espressif32/CMakeFiles/Debug.dir
+/storage0/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/cmake-build-espressif32/CMakeFiles/Z_DUMMY_TARGET.dir
+/storage0/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/cmake-build-espressif32/CMakeFiles/edit_cache.dir
+/storage0/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/cmake-build-espressif32/CMakeFiles/rebuild_cache.dir

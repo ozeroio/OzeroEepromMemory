@@ -6,10 +6,11 @@
  * @author Dalmir da Silva <dalmirdasilva@gmail.com>
  */
 
-#ifndef __OZEROIO_EXTERNAL_24CL512_EEPROM_H__
-#define __OZEROIO_EXTERNAL_24CL512_EEPROM_H__ 1
+#ifndef OZEROIO_EXTERNAL_24CL512_EEPROM_H
+#define OZEROIO_EXTERNAL_24CL512_EEPROM_H 1
 
 #include <ExternalEeprom/ExternalEeprom.h>
+#include <cstdint>
 
 class External24cl512Eeprom : public ExternalEeprom {
 
@@ -20,7 +21,7 @@ public:
    *
    * @param deviceAddress The i2c address of the device.
    */
-  External24cl512Eeprom(uint8_t deviceAddress);
+  explicit External24cl512Eeprom(uint8_t deviceAddress);
 
   /**
    * Public constructor.
@@ -34,4 +35,4 @@ public:
   External24cl512Eeprom(uint8_t sdaPin, uint8_t sclPin, uint8_t deviceAddress);
 };
 
-#endif /* __OZEROIO_EXTERNAL_24CL512_EEPROM_H__ */
+#endif /* OZEROIO_EXTERNAL_24CL512_EEPROM_H */

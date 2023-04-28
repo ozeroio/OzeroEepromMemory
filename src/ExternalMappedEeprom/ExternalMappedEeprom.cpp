@@ -9,13 +9,13 @@
 #include "ExternalMappedEeprom.h"
 #include <Arduino.h>
 
-ExternalMappedEeprom::ExternalMappedEeprom(ExternalEeprom *eemprom, int32_t startAddress, int32_t endAddress)
+ExternalMappedEeprom::ExternalMappedEeprom(ExternalEeprom *eemprom, const int32_t startAddress, const int32_t endAddress)
     : ExternalEeprom(eemprom->getDeviceAddress(), eemprom->getPageSize(),
                      eemprom->getDeviceSize()), eeprom(eemprom), startAddress(startAddress),
       endAddress(endAddress) {
 }
 
-int32_t ExternalMappedEeprom::writeBlock(int32_t address, uint8_t *buf, int32_t len) {
+int32_t ExternalMappedEeprom::writeBlock(const int32_t address, uint8_t *buf, int32_t len) {
   int32_t mappedAddress = (address + startAddress);
   if (mappedAddress >= endAddress) {
     return 0;
@@ -25,7 +25,7 @@ int32_t ExternalMappedEeprom::writeBlock(int32_t address, uint8_t *buf, int32_t 
   return eeprom->writeBlock(mappedAddress, buf, len);
 }
 
-int32_t ExternalMappedEeprom::readBlock(int32_t address, uint8_t *buf, int32_t len) {
+int32_t ExternalMappedEeprom::readBlock(const int32_t address, uint8_t *buf, const int32_t len) {
   int32_t mappedAddress = (address + startAddress);
   if (mappedAddress >= endAddress) {
     return 0;

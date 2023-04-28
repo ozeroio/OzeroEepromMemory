@@ -6,8 +6,8 @@
  * @author Dalmir da Silva <dalmirdasilva@gmail.com>
  */
 
-#ifndef __OZEROIO_EXTERNAL_24X16_EEPROM_H__
-#define __OZEROIO_EXTERNAL_24X16_EEPROM_H__ 1
+#ifndef OZEROIO_EXTERNAL_24X16_EEPROM_H
+#define OZEROIO_EXTERNAL_24X16_EEPROM_H 1
 
 #include <ExternalEeprom/ExternalEeprom.h>
 
@@ -19,7 +19,7 @@ public:
    *
    * @param device The i2c address of the device.
    */
-  External24x16Eeprom(uint8_t deviceAddress);
+  explicit External24x16Eeprom(uint8_t deviceAddress);
 
   /**
    * Public constructor.
@@ -33,4 +33,4 @@ public:
   External24x16Eeprom(uint8_t sdaPin, uint8_t sclPin, uint8_t deviceAddress);
 };
 
-#endif /* __OZEROIO_EXTERNAL_24X16_EEPROM_H__ */
+#endif /* OZEROIO_EXTERNAL_24X16_EEPROM_H */

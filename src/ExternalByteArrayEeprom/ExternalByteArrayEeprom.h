@@ -6,11 +6,11 @@
  * @author Dalmir da Silva <dalmirdasilva@gmail.com>
  */
 
-#ifndef __OZEROIO_EXTERNAL_BYTE_ARRAY_EEPROM_H__
-#define __OZEROIO_EXTERNAL_BYTE_ARRAY_EEPROM_H__ 1
+#ifndef OZEROIO_EXTERNAL_BYTE_ARRAY_EEPROM_H
+#define OZEROIO_EXTERNAL_BYTE_ARRAY_EEPROM_H 1
 
 #include <ExternalEeprom/ExternalEeprom.h>
-#include <stdint.h>
+#include <cstdint>
 
 class ExternalByteArrayEeprom : public ExternalEeprom {
 
@@ -38,7 +38,7 @@ protected:
    * @param buffer
    * @param len
    */
-  virtual int32_t writeBlock(int32_t address, uint8_t *buf, int32_t len);
+  int32_t writeBlock(int32_t address, uint8_t *buf, int32_t len) override;
 
   /**
    * Reads a block of bytes from the device.
@@ -47,7 +47,7 @@ protected:
    * @param buf
    * @param len
    */
-  virtual int32_t readBlock(int32_t address, uint8_t *buf, int32_t len);
+  int32_t readBlock(int32_t address, uint8_t *buf, int32_t len) override;
 };
 
-#endif /* __OZEROIO_EXTERNAL_BYTE_ARRAY_EEPROM_H__ */
+#endif /* OZEROIO_EXTERNAL_BYTE_ARRAY_EEPROM_H */

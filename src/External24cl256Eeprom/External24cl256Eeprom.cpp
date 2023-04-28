@@ -13,7 +13,7 @@ External24cl256Eeprom::External24cl256Eeprom(uint8_t deviceAddress) :
   setDeviceSize(0x7fff);
   setPageSize(0x40);
   setAddressSize(0x02);
-  setWriteCycleTime(5);
+  setWriteCycleTime(5000);
 }
 
 External24cl256Eeprom::External24cl256Eeprom(uint8_t sdaPin, uint8_t sclPin, uint8_t deviceAddress) :
@@ -21,6 +21,6 @@ External24cl256Eeprom::External24cl256Eeprom(uint8_t sdaPin, uint8_t sclPin, uin
   setDeviceSize(0x7fff);
   setPageSize(0x40);
   setAddressSize(0x02);
-  setWriteCycleTime(5);
+  setWriteCycleTime(5000);
 }
 

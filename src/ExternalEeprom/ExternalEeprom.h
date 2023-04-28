@@ -6,15 +6,15 @@
  * @author Dalmir da Silva <dalmirdasilva@gmail.com>
  */
 
-#ifndef __OZEROIO_EXTERNAL_EEPROM_H__
-#define __OZEROIO_EXTERNAL_EEPROM_H__ 1
+#ifndef OZEROIO_EXTERNAL_EEPROM_H
+#define OZEROIO_EXTERNAL_EEPROM_H 1
 
-#ifndef _max
-#define _max(x, y) (((x) > (y)) ? (x) : (y))
+#ifndef ozero_max
+#define ozero_max(x, y) (((x) > (y)) ? (x) : (y))
 #endif
 
-#ifndef _min
-#define _min(x, y) (((x) < (y)) ? (x) : (y))
+#ifndef ozero_min
+#define ozero_min(x, y) (((x) < (y)) ? (x) : (y))
 #endif
 
 #include <EepromBasedWiredDevice/EepromBasedWiredDevice.h>
@@ -40,8 +40,7 @@ public:
   /**
    * Virtual destructor.
    */
-  virtual ~ExternalEeprom() {
-  }
+  ~ExternalEeprom() override = default;
 
   /**
    * Writes a uint8_t at the address into the device.
@@ -98,7 +97,7 @@ public:
    *
    * @return
    */
-  int32_t getPageSize() {
+  int32_t getPageSize() const {
     return pageSize;
   }
 
@@ -107,7 +106,7 @@ public:
    *
    * @param pageSize
    */
-  void setPageSize(int32_t pageSize) {
+  void setPageSize(const int32_t pageSize) {
     this->pageSize = pageSize;
   }
 
@@ -116,7 +115,7 @@ public:
    *
    * @return
    */
-  int32_t getDeviceSize() {
+  int32_t getDeviceSize() const {
     return deviceSize;
   }
 
@@ -125,7 +124,7 @@ public:
    *
    * @param deviceSize
    */
-  void setDeviceSize(int32_t deviceSize) {
+  void setDeviceSize(const int32_t deviceSize) {
     this->deviceSize = deviceSize;
   }
 
@@ -153,7 +152,7 @@ protected:
    *
    * @param deviceAddress   The i2c address of the device.
    */
-  ExternalEeprom(uint8_t deviceAddress);
+  ExternalEeprom(const uint8_t deviceAddress);
 
   /**
    * Protected constructor.
@@ -167,4 +166,4 @@ protected:
   ExternalEeprom(uint8_t sdaPin, uint8_t sclPin, uint8_t deviceAddress);
 };
 
-#endif /* __OZEROIO_EXTERNAL_EEPROM_H__ */
+#endif /* OZEROIO_EXTERNAL_EEPROM_H */
