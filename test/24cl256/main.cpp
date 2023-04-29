@@ -4,7 +4,7 @@
 #include <ExternalEeprom/ExternalEeprom.cpp>
 #ifdef ARDUINO_ARCH_ESP32
 #include <freertos/FreeRTOS.h>
-#define LEN 32000
+#define LEN 256
 #else
 #define LEN 256
 #endif
