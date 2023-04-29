@@ -18,6 +18,7 @@ void setup() {
 	auto *read = new uint8_t[LEN];
 	for (int i = 0; i < LEN; i++) {
 		data[i] = random() % 0xff;
+		read[i] = 0;
 	}
 	int address = 0;
 	Serial.print("Device address: ");
@@ -40,7 +41,6 @@ void setup() {
 			match = false;
 			Serial.print("FAILED! AT ");
 			Serial.print(i);
-			Serial.print(": data[] = ");
 			Serial.print(": data[] = ");
 			Serial.print(data[i], HEX);
 			Serial.print(", read[] = ");

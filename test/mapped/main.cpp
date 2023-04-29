@@ -76,6 +76,7 @@ void setup() {
 	auto *read = new uint8_t[LEN];
 	for (int i = 0; i < LEN; i++) {
 		data[i] = random() % 0xff;
+		read[i] = 0;
 	}
 	Serial.println("Clearing memoryEeprom...");
 	clearMemory(&memoryEeprom);
@@ -110,7 +111,6 @@ void setup() {
 			match = false;
 			Serial.print("FAILED! AT ");
 			Serial.print(i);
-			Serial.print(": data[] = ");
 			Serial.print(": data[] = ");
 			Serial.print(data[i], HEX);
 			Serial.print(", read[] = ");
