@@ -9,11 +9,13 @@
 #include "ExternalEeprom.h"
 
 ExternalEeprom::ExternalEeprom(const uint8_t deviceAddress)
-        : EepromBasedWiredDevice(0x50 | (deviceAddress & (uint8_t) 0x07)) {
+        : EepromBasedWiredDevice(0x50 | deviceAddress),
+          pageSize(0), deviceSize(0) {
 }
 
 ExternalEeprom::ExternalEeprom(const uint8_t sdaPin, const uint8_t sclPin, const uint8_t deviceAddress)
-        : EepromBasedWiredDevice(sdaPin, sclPin, 0x50 | (deviceAddress & (uint8_t) 0x07)) {
+        : EepromBasedWiredDevice(sdaPin, sclPin, 0x50 | deviceAddress),
+          pageSize(0), deviceSize(0) {
 }
 
 uint16_t ExternalEeprom::write(const int32_t address, uint8_t b) {
@@ -101,10 +103,10 @@ int32_t ExternalEeprom::setBytes(const int32_t address, const uint8_t b, const i
     return written;
 }
 
-int32_t ExternalEeprom::pageRemainingRoom(const int32_t address) {
+int32_t ExternalEeprom::pageRemainingRoom(const int32_t address) const {
     return pageSize - (address % pageSize);
 }
 
-int32_t ExternalEeprom::deviceRemainingRoom(const int32_t address) {
+int32_t ExternalEeprom::deviceRemainingRoom(const int32_t address) const {
     return deviceSize - address;
 }

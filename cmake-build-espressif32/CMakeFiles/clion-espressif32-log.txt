@@ -1,4 +1,0 @@
-/snap/clion/234/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=espressif32 -DCMAKE_BUILD_TYPE:STRING=espressif32 -G "CodeBlocks - Unix Makefiles" -S /storage0/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory -B /storage0/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/cmake-build-espressif32
--- Configuring done
--- Generating done
--- Build files have been written to: /storage0/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/cmake-build-espressif32

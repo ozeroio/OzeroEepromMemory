@@ -8,19 +8,16 @@
 
 #include "External24cl512Eeprom.h"
 
-External24cl512Eeprom::External24cl512Eeprom(uint8_t deviceAddress) :
-    ExternalEeprom(deviceAddress) {
-  setDeviceSize(0xfffe);
-  setPageSize(0x80);
-  setAddressSize(0x02);
-  setWriteCycleTime(5000);
+External24cl512Eeprom::External24cl512Eeprom(uint8_t deviceAddress) : ExternalEeprom(deviceAddress) {
+	setDeviceSize(0xfffe);
+	setPageSize(0x80);
+	setAddressSize(0x02);
+	setWriteCycleTime(5000);
 }
 
-External24cl512Eeprom::External24cl512Eeprom(uint8_t sdaPin, uint8_t sclPin, uint8_t deviceAddress) :
-    ExternalEeprom(sdaPin, sclPin, deviceAddress) {
-  setDeviceSize(0xfffe);
-  setPageSize(0x80);
-  setAddressSize(0x02);
-  setWriteCycleTime(5000);
+External24cl512Eeprom::External24cl512Eeprom(uint8_t sdaPin, uint8_t sclPin, uint8_t deviceAddress) : ExternalEeprom(sdaPin, sclPin, deviceAddress) {
+	setDeviceSize(0xfffe);
+	setPageSize(0x80);
+	setAddressSize(0x02);
+	setWriteCycleTime(5000);
 }
-
