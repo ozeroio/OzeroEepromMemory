@@ -2,9 +2,13 @@
 #include <ExternalByteArrayEeprom/ExternalByteArrayEeprom.cpp>
 #include <ExternalByteArrayEeprom/ExternalByteArrayEeprom.h>
 #include <ExternalEeprom/ExternalEeprom.cpp>
-#include <freertos/FreeRTOS.h>
 
+#ifdef ARDUINO_ARCH_ESP32
+#include <freertos/FreeRTOS.h>
 #define LEN 32000
+#else
+#define LEN 256
+#endif
 
 ExternalByteArrayEeprom eeprom(new uint8_t[LEN], LEN);
 
@@ -52,7 +56,9 @@ void setup() {
 }
 
 void loop() {
+#ifdef ARDUINO_ARCH_ESP32
 	Serial.print("Free heap: ");
 	Serial.println(xPortGetFreeHeapSize());
+#endif
 	delay(1000);
 }

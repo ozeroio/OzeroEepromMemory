@@ -2,9 +2,12 @@
 #include <External24cl256Eeprom/External24cl256Eeprom.cpp>
 #include <External24cl256Eeprom/External24cl256Eeprom.h>
 #include <ExternalEeprom/ExternalEeprom.cpp>
+#ifdef ARDUINO_ARCH_ESP32
 #include <freertos/FreeRTOS.h>
-
 #define LEN 32000
+#else
+#define LEN 256
+#endif
 
 External24cl256Eeprom eeprom(27, 26, 0x00);
 
@@ -52,7 +55,9 @@ void setup() {
 }
 
 void loop() {
+#ifdef ARDUINO_ARCH_ESP32
 	Serial.print("Free heap: ");
 	Serial.println(xPortGetFreeHeapSize());
+#endif
 	delay(1000);
 }
