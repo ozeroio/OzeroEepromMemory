@@ -8,6 +8,7 @@ External24cl256Eeprom eeprom = External24cl256Eeprom(0x50);
 
 void setup() {
 	Serial.begin(9600);
+	Wire.begin();
 	Serial.println("initialized");
 	eeprom.write(0, 0xab);
 	Serial.println(eeprom.read(0), HEX);

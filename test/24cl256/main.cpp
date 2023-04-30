@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <Wire.h>
 #include <External24cl256Eeprom/External24cl256Eeprom.cpp>
 #include <External24cl256Eeprom/External24cl256Eeprom.h>
 #include <ExternalEeprom/ExternalEeprom.cpp>
@@ -9,10 +10,16 @@
 #define LEN 256
 #endif
 
-External24cl256Eeprom eeprom(27, 26, 0x00);
+External24cl256Eeprom eeprom();
 
 void setup() {
 	Serial.begin(115200);
+#ifdef ARDUINO_ARCH_ESP32
+	Wire.begin(27, 26);
+#else
+	Wire.begin();
+#endif
+
 	Serial.println("Initializing...");
 	auto *data = new uint8_t[LEN];
 	auto *read = new uint8_t[LEN];

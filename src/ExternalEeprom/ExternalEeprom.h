@@ -9,14 +9,6 @@
 #ifndef OZEROIO_EXTERNAL_EEPROM_H
 #define OZEROIO_EXTERNAL_EEPROM_H 1
 
-#ifndef ozero_max
-#define ozero_max(x, y) (((x) > (y)) ? (x) : (y))
-#endif
-
-#ifndef ozero_min
-#define ozero_min(x, y) (((x) < (y)) ? (x) : (y))
-#endif
-
 #include <EepromBasedWiredDevice/EepromBasedWiredDevice.h>
 #include <stdint.h>
 
@@ -153,17 +145,6 @@ protected:
      * @param deviceAddress   The i2c address of the device.
      */
     explicit ExternalEeprom(uint8_t deviceAddress);
-
-    /**
-     * Protected constructor.
-     *
-     * NOTE: For devices that support custom i2c pins.
-     *
-     * @param sdaPin          The i2c data pin of the device.
-     * @param sclPin          The i2c clock pin of the device.
-     * @param deviceAddress   The i2c address of the device.
-     */
-    ExternalEeprom(uint8_t sdaPin, uint8_t sclPin, uint8_t deviceAddress);
 };
 
 #endif /* OZEROIO_EXTERNAL_EEPROM_H */

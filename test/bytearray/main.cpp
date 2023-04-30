@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <Wire.h>
 #include <ExternalByteArrayEeprom/ExternalByteArrayEeprom.cpp>
 #include <ExternalByteArrayEeprom/ExternalByteArrayEeprom.h>
 #include <ExternalEeprom/ExternalEeprom.cpp>
@@ -14,6 +15,11 @@ ExternalByteArrayEeprom eeprom(new uint8_t[LEN], LEN);
 
 void setup() {
 	Serial.begin(115200);
+#ifdef ARDUINO_ARCH_ESP32
+	Wire.begin(27, 26);
+#else
+	Wire.begin();
+#endif
 	Serial.println("Initializing...");
 	auto *data = new uint8_t[LEN];
 	auto *read = new uint8_t[LEN];

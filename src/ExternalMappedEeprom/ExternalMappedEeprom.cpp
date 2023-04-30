@@ -9,7 +9,7 @@
 #include "ExternalMappedEeprom.h"
 
 ExternalMappedEeprom::ExternalMappedEeprom(ExternalEeprom *eemprom, const int32_t startAddress, const int32_t endAddress)
-	: ExternalEeprom(OZEROIO_WIRE_NOT_VALID_ADDRESS),
+	: ExternalEeprom(0),
 	  eeprom(eemprom), startAddress(startAddress), endAddress(endAddress) {
 }
 

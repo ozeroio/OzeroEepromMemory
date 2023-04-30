@@ -13,11 +13,6 @@ ExternalEeprom::ExternalEeprom(const uint8_t deviceAddress)
           pageSize(0), deviceSize(0) {
 }
 
-ExternalEeprom::ExternalEeprom(const uint8_t sdaPin, const uint8_t sclPin, const uint8_t deviceAddress)
-        : EepromBasedWiredDevice(sdaPin, sclPin, 0x50 | deviceAddress),
-          pageSize(0), deviceSize(0) {
-}
-
 uint16_t ExternalEeprom::write(const int32_t address, uint8_t b) {
     return (uint16_t) writeBlock(address, &b, 1);
 }

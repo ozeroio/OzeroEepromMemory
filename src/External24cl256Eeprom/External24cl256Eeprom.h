@@ -19,18 +19,14 @@ public:
 	 *
 	 * @param deviceAddress The i2c address of the device.
 	 */
-	explicit External24cl256Eeprom(uint8_t deviceAddress);
+	External24cl256Eeprom();
 
 	/**
 	 * Public constructor.
 	 *
-	 * NOTE: For devices that support custom i2c pins.
-	 *
-	 * @param sdaPin          The i2c data pin of the device.
-	 * @param sclPin          The i2c clock pin of the device.
-	 * @param deviceAddress   The i2c address of the device.
+	 * @param deviceAddress The i2c address of the device.
 	 */
-	External24cl256Eeprom(uint8_t sdaPin, uint8_t sclPin, uint8_t deviceAddress);
+	explicit External24cl256Eeprom(uint8_t deviceAddress);
 };
 
 #endif /* OZEROIO_EXTERNAL_24CL256_EEPROM_H */

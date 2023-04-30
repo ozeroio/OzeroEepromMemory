@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <Wire.h>
 #include <ExternalEeprom/ExternalEeprom.cpp>
 #include <ExternalMappedEeprom/ExternalMappedEeprom.cpp>
 #include <ExternalMappedEeprom/ExternalMappedEeprom.h>
@@ -15,7 +16,7 @@
 #endif
 
 ExternalByteArrayEeprom memoryEeprom(new uint8_t[LEN], LEN);
-External24cl256Eeprom externalEeprom(27, 26, 0x00);
+External24cl256Eeprom externalEeprom(0x00);
 
 ExternalMappedEeprom memoryMappedEeprom(&memoryEeprom, 0, LEN / 2);
 ExternalMappedEeprom externalMappedEeprom(&externalEeprom, LEN / 2, LEN);
@@ -71,6 +72,12 @@ void dump(ExternalEeprom *eeprom) {
 
 void setup() {
 	Serial.begin(115200);
+#ifdef ARDUINO_ARCH_ESP32
+	Wire.begin(27, 26);
+#else
+	Wire.begin();
+#endif
+
 	Serial.println("Initializing...");
 	auto *data = new uint8_t[LEN];
 	auto *read = new uint8_t[LEN];
