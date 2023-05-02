@@ -58,8 +58,10 @@ int16_t ExternalEeprom::read(const int32_t address) {
     return (int16_t) b;
 }
 
-int32_t ExternalEeprom::readBytes(const int32_t address, uint8_t *buf, const int32_t len) {
+int32_t ExternalEeprom::readBytes(const int32_t address, uint8_t *buf, int32_t len) {
     int32_t read = 0;
+
+	len = ozero_min(deviceRemainingRoom(address), len);
 
     // Read operation is not bounded by pages.
     // Sequential ReadSequential Read is used by readBlock.

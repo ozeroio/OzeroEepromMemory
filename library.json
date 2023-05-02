@@ -1,6 +1,6 @@
 {
   "name": "OzeroEepromMemory",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "keywords": "bus device eeprom wire memory",
   "description": "Library to abstract external eeprom memories.",
   "repository": {
@@ -20,11 +20,11 @@
       "frameworks": "arduino"
     },
     {
-      "name": "ExternalDevice",
+      "name": "OzeroDevice",
       "frameworks": "arduino",
       "repository": {
         "type": "git",
-        "url": "https://github.com/ozeroio/ExternalDevice.git"
+        "url": "https://github.com/ozeroio/OzeroDevice.git"
       }
     }
   ],

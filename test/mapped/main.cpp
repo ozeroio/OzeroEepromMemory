@@ -3,8 +3,8 @@
 #include <ExternalEeprom/ExternalEeprom.cpp>
 #include <ExternalMappedEeprom/ExternalMappedEeprom.cpp>
 #include <ExternalMappedEeprom/ExternalMappedEeprom.h>
-#include <External24cl256Eeprom/External24cl256Eeprom.cpp>
-#include <External24cl256Eeprom/External24cl256Eeprom.h>
+#include <External24x256Eeprom/External24x256Eeprom.cpp>
+#include <External24x256Eeprom/External24x256Eeprom.h>
 #include <ExternalByteArrayEeprom/ExternalByteArrayEeprom.cpp>
 #include <ExternalByteArrayEeprom/ExternalByteArrayEeprom.h>
 
@@ -16,7 +16,7 @@
 #endif
 
 ExternalByteArrayEeprom memoryEeprom(new uint8_t[LEN], LEN);
-External24cl256Eeprom externalEeprom(0x00);
+External24x256Eeprom externalEeprom(0x00);
 
 ExternalMappedEeprom memoryMappedEeprom(&memoryEeprom, 0, LEN / 2);
 ExternalMappedEeprom externalMappedEeprom(&externalEeprom, LEN / 2, LEN);

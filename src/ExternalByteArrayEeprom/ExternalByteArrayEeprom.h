@@ -64,4 +64,4 @@ protected:
 	int32_t readBlock(int32_t address, uint8_t *buf, int32_t len) override;
 };
 
-#endif /* OZEROIO_EXTERNAL_BYTE_ARRAY_EEPROM_H */
+#endif// OZEROIO_EXTERNAL_BYTE_ARRAY_EEPROM_H

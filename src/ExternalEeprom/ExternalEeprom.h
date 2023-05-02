@@ -27,6 +27,12 @@ class ExternalEeprom : public EepromBasedWiredDevice {
      */
     int32_t deviceSize;
 
+    /**
+     * The number of bits used in address byte(s) to effectively address data (usually the log2 of the deviceSize - except
+     * of device that use the hard address (A2, A1 and A0) to address data).
+     */
+    uint8_t addressBitsSize;
+
 public:
 
     /**
@@ -102,23 +108,41 @@ public:
         this->pageSize = pageSize;
     }
 
-    /**
+	/**
      * Gets the total size of the device.
      *
      * @return
-     */
-    virtual int32_t getDeviceSize() const {
-        return deviceSize;
-    }
+	 */
+	virtual int32_t getDeviceSize() const {
+		return deviceSize;
+	}
 
-    /**
+	/**
      * Sets the size of the device.
      *
      * @param deviceSize
-     */
-    void setDeviceSize(const int32_t deviceSize) {
-        this->deviceSize = deviceSize;
-    }
+	 */
+	void setDeviceSize(const int32_t deviceSize) {
+		this->deviceSize = deviceSize;
+	}
+
+	/**
+     * Gets the number of bits used to address data.
+     *
+     * @return
+	 */
+	virtual uint8_t getAddressBitsSize() const {
+		return addressBitsSize;
+	}
+
+	/**
+     * Sets the number of bits used to address data.
+     *
+     * @param addressBitsSize
+	 */
+	void setAddressBitsSize(const uint8_t addressBitsSize) {
+		this->addressBitsSize = addressBitsSize;
+	}
 
     /**
      * Determines the length until first multiple of 'pageSize' of an address
@@ -147,4 +171,4 @@ protected:
     explicit ExternalEeprom(uint8_t deviceAddress);
 };
 
-#endif /* OZEROIO_EXTERNAL_EEPROM_H */
+#endif// OZEROIO_EXTERNAL_EEPROM_H
