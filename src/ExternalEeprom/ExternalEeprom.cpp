@@ -10,7 +10,7 @@
 
 ExternalEeprom::ExternalEeprom(const uint8_t deviceAddress)
         : EepromBasedWiredDevice(0x50 | deviceAddress),
-          pageSize(0), deviceSize(0) {
+          pageSize(0), deviceSize(0), addressBitsSize(0) {
 }
 
 uint16_t ExternalEeprom::write(const int32_t address, uint8_t b) {
@@ -51,7 +51,7 @@ int32_t ExternalEeprom::writeBytes(int32_t address, uint8_t *buf, const int32_t 
 
 int16_t ExternalEeprom::read(const int32_t address) {
     uint8_t b;
-    int16_t result = readBytes(address, &b, 1);
+    auto result = (int16_t) readBytes(address, &b, 1);
     if (result < 0) {
         return result;
     }
