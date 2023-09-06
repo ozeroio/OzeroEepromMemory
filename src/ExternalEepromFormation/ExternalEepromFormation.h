@@ -12,6 +12,9 @@
 #include <ExternalEeprom/ExternalEeprom.h>
 #include <stdint.h>
 
+/**
+ * What is a EepromFormation?
+ */
 class ExternalEepromFormation : public ExternalEeprom {
 
 	ExternalEeprom *eeprom;

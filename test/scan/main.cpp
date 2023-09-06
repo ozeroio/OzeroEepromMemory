@@ -5,6 +5,7 @@ void setup() {
 	Serial.begin(115200);
 
 #ifdef ARDUINO_ARCH_ESP32
+	Serial.println("ARDUINO_ARCH_ESP32 set");
 //	Wire.begin(27, 26);
 	Wire.begin();
 #else
