@@ -9,7 +9,7 @@
 #include "ExternalByteArrayEeprom.h"
 
 ExternalByteArrayEeprom::ExternalByteArrayEeprom(uint8_t *byteArray, int32_t deviceSize)
-	: ExternalEeprom(OZEROIO_WIRE_NOT_VALID_ADDRESS), byteArray(byteArray) {
+	: ExternalEeprom(0), byteArray(byteArray) {
 	setDeviceSize(deviceSize);
 
 	// Write operations respect page boundaries. Therefore, having page size set is necessary.
