@@ -21,6 +21,6 @@ External24x16Eeprom::External24x16Eeprom(uint8_t deviceAddress) : ExternalEeprom
 
 uint8_t External24x16Eeprom::dynamicAddress(int32_t memoryAddress) const {
 
-	// Set A9 and A8 bits as part of LSB of the device address.
+	// Set A10, A9 and A8 bits as part of LSB of the device address.
 	return (deviceAddress & 0xf8) | ((memoryAddress >> 8) & 0x07);
 }
