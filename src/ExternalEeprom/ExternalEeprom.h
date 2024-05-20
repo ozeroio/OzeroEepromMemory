@@ -36,11 +36,6 @@ class ExternalEeprom : public EepromBasedWiredDevice {
 public:
 
     /**
-     * Virtual destructor.
-     */
-    ~ExternalEeprom() override = default;
-
-    /**
      * Writes a uint8_t at the address into the device.
      *
      * @param address     The address where the data will be written.

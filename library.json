@@ -1,6 +1,6 @@
 {
   "name": "OzeroEepromMemory",
-  "version": "3.2.2",
+  "version": "3.2.3",
   "keywords": "bus device eeprom wire memory",
   "description": "Library to abstract external eeprom memories.",
   "repository": {
