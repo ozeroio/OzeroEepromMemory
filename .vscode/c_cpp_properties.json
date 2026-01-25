@@ -1,0 +1,60 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "/home/dalmir/storage/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/src",
+                "/home/dalmir/storage/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/test/psram",
+                "/home/dalmir/storage/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/.pio/libdeps/megaatmega2560/OzeroDevice/include",
+                "/home/dalmir/storage/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/.pio/libdeps/megaatmega2560/OzeroDevice/src",
+                "/home/dalmir/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "/home/dalmir/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                "/home/dalmir/.platformio/packages/framework-arduino-avr/cores/arduino",
+                "/home/dalmir/.platformio/packages/framework-arduino-avr/variants/mega",
+                "/home/dalmir/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                "/home/dalmir/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                "/home/dalmir/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "/home/dalmir/storage/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/src",
+                    "/home/dalmir/storage/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/test/psram",
+                    "/home/dalmir/storage/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/.pio/libdeps/megaatmega2560/OzeroDevice/include",
+                    "/home/dalmir/storage/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/.pio/libdeps/megaatmega2560/OzeroDevice/src",
+                    "/home/dalmir/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "/home/dalmir/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                    "/home/dalmir/.platformio/packages/framework-arduino-avr/cores/arduino",
+                    "/home/dalmir/.platformio/packages/framework-arduino-avr/variants/mega",
+                    "/home/dalmir/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                    "/home/dalmir/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                    "/home/dalmir/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=60118",
+                "ARDUINO_AVR_MEGA2560",
+                "F_CPU=16000000L",
+                "ARDUINO_ARCH_AVR",
+                "ARDUINO=10808",
+                "__AVR_ATmega2560__",
+                ""
+            ],
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++11",
+            "compilerPath": "/home/dalmir/.platformio/packages/toolchain-atmelavr/bin/avr-gcc",
+            "compilerArgs": [
+                "-mmcu=atmega2560",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}

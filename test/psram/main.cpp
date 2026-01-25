@@ -25,15 +25,20 @@ std::vector<int, PSallocator<int>> v;
 void setup() {
 	Serial.begin(460800);
 	delay(1000);
-	Serial.printf("Before allocating ~4M of data: %d free.", ESP.getFreePsram());
+	log_i("Before allocating ~4M of data: %d free.", ESP.getFreePsram());
 	v.reserve(900000);
 	for (uint32_t x = 0; x < 900000; x++) {
 		v.push_back(x);
 	}
-	Serial.printf("After allocating ~4M of data: %d free.", ESP.getFreePsram());
+	for (uint32_t x = 0; x < 900000; x++) {
+		if (v.at(x) != x) {
+			log_e("At %d error", x);
+		}
+	}
+	log_i("After allocating ~4M of data: %d free.", ESP.getFreePsram());
 	v.clear();
 	v.shrink_to_fit();
-	Serial.printf("After freeing ~4M of data: %d free.", ESP.getFreePsram());
+	log_i("After freeing ~4M of data: %d free.", ESP.getFreePsram());
 }
 
 void loop() {

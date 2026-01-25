@@ -26,7 +26,7 @@ int32_t ExternalEeprom::writeBytes(int32_t address, uint8_t *buf, const int32_t 
     remaining = ozero_min(room, len);
 
     // Eeprom devices are page bounded for writing. Attempting to write beyond the page boundaries in a single
-    // operation it case the data address to roll-over and previous data will be overwritten.
+    // operation it causes the data address to roll-over and previous data will be overwritten.
     // The approach is to write blocks not longer than the remaining of the current page.
     while (remaining > 0) {
         room = pageRemainingRoom(address);

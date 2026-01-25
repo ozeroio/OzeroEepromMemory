@@ -14,6 +14,9 @@ ExternalMappedEeprom::ExternalMappedEeprom(ExternalEeprom *eemprom, const int32_
 }
 
 int32_t ExternalMappedEeprom::writeBlock(const int32_t address, uint8_t *buf, const int32_t len) {
+	if (!eeprom || !buf) {
+		return -1;
+	}
 	int32_t remaining = deviceRemainingRoom(address);
 	if (remaining <= 0) {
 		return 0;
@@ -22,6 +25,9 @@ int32_t ExternalMappedEeprom::writeBlock(const int32_t address, uint8_t *buf, co
 }
 
 int32_t ExternalMappedEeprom::readBlock(const int32_t address, uint8_t *buf, const int32_t len) {
+	if (!eeprom || !buf) {
+		return -1;
+	}
 	int32_t remaining = deviceRemainingRoom(address);
 	if (remaining <= 0) {
 		return 0;

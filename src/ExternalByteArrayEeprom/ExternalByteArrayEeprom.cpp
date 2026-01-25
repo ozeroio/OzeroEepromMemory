@@ -27,6 +27,9 @@ uint8_t *ExternalByteArrayEeprom::getByteArray() {
 }
 
 int32_t ExternalByteArrayEeprom::writeBlock(int32_t address, uint8_t *buf, int32_t len) {
+	if (!byteArray || !buf) {
+		return -1;
+	}
 	address = ozero_max(address, 0);
 	len = ozero_min(len, getDeviceSize() - address);
 	for (int32_t i = 0; i < len; i++) {
@@ -36,6 +39,9 @@ int32_t ExternalByteArrayEeprom::writeBlock(int32_t address, uint8_t *buf, int32
 }
 
 int32_t ExternalByteArrayEeprom::readBlock(int32_t address, uint8_t *buf, int32_t len) {
+	if (!byteArray || !buf) {
+		return -1;
+	}
 	address = ozero_max(address, 0);
 	len = ozero_min(len, deviceRemainingRoom(address));
 	for (int32_t i = 0; i < len; i++) {
