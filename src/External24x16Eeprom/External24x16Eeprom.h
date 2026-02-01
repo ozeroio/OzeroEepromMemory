@@ -14,19 +14,20 @@
 class External24x16Eeprom : public ExternalEeprom {
 public:
 	/**
-	 * Public constructor.
-	 *
+	 * Default constructor.
+	 * Initializes the 24x16 EEPROM with device address 0.
 	 */
 	External24x16Eeprom();
 
 	/**
-	 * Public constructor.
+	 * Public constructor with device address.
 	 *
-	 * @param device The i2c address of the device.
+	 * @param deviceAddress The I2C device address of the device.
 	 */
 	explicit External24x16Eeprom(uint8_t deviceAddress);
 
 	/**
+	 * Gets the dynamic I2C address for a given memory address.
 	 * Standard EEPROM Access: The 16K EEPROM device requires an 8-bit device address word following a Start
 	 * Condition to enable the chip for a Read or Write operation. The device address word consists of a mandatory
 	 * "1010" (Ah) sequence for the first four Most Significant Bits (MSB) as shown in Figure 10. on page 12. This is common
@@ -36,8 +37,8 @@ public:
 	 * The AT24C16 does not use the device address pins, which limits the number of devices
 	 * on a single bus to one. The A0, A1 and A2 pins are no connects.
 	 *
-	 * @param memoryAddress
-	 * @return
+	 * @param memoryAddress The memory address to convert.
+	 * @return              The dynamic I2C address for the given memory address.
 	 */
 	uint8_t dynamicAddress(int32_t memoryAddress) const override;
 };

@@ -25,9 +25,21 @@ class ExternalEepromFormation : public ExternalEeprom {
 	uint8_t hardwareAddressMask;
 
 public:
+	/**
+	 * Public constructor.
+	 *
+	 * @param eeprom             The underlying external eeprom to use.
+	 * @param size               The number of eeproms in the formation.
+	 * @param hardwareAddressMask The mask indicating which hardware address bits to use for multiplexing.
+	 */
 	ExternalEepromFormation(ExternalEeprom *eeprom, uint8_t size, uint8_t hardwareAddressMask);
 
-
+	/**
+	 * Gets the dynamic address for a given memory address.
+	 *
+	 * @param memoryAddress The memory address to convert.
+	 * @return              The dynamic I2C address for the given memory address.
+	 */
 	uint8_t dynamicAddress(int32_t memoryAddress) const override;
 };
 

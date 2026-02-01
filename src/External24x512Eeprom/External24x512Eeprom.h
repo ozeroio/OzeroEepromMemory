@@ -16,14 +16,15 @@ class External24x512Eeprom : public ExternalEeprom {
 
 public:
 	/**
-	 * Public constructor.
+	 * Default constructor.
+	 * Initializes the 24x512 EEPROM with device address 0.
 	 */
 	explicit External24x512Eeprom();
 
 	/**
-	 * Public constructor.
+	 * Public constructor with device address.
 	 *
-	 * @param deviceAddress The i2c address of the device.
+	 * @param deviceAddress The I2C device address of the device.
 	 */
 	explicit External24x512Eeprom(uint8_t deviceAddress);
 };

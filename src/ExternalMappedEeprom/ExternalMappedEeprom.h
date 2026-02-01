@@ -33,11 +33,11 @@ public:
 	/**
 	 * Public constructor.
 	 *
-	 * @param eemprom
-	 * @param startAddress
-	 * @param endAddress
+	 * @param eeprom      The underlying external eeprom to map.
+	 * @param startAddress The start address of the mapping.
+	 * @param endAddress   The end address of the mapping.
 	 */
-	ExternalMappedEeprom(ExternalEeprom *eemprom, int32_t startAddress, int32_t endAddress);
+	ExternalMappedEeprom(ExternalEeprom *eeprom, int32_t startAddress, int32_t endAddress);
 
 	/**
 	 * Device size.
@@ -49,18 +49,18 @@ public:
 	}
 
 	/**
-	 * Return the remaining romm from backed eprom.
+	 * Return the remaining room from backed eeprom.
 	 *
-	 * @param address
-	 * @return
+	 * @param address     The current address.
+	 * @return            The number of bytes remaining until the next page boundary in the underlying device.
 	 */
 	int32_t pageRemainingRoom(int32_t address) const override;
 
 	/**
 	 * Return the remaining space on the mapped eeprom.
 	 *
-	 * @param address
-	 * @return
+	 * @param address     The current address in the mapped region.
+	 * @return            The number of bytes remaining from address to end of mapped region.
 	 */
 	int32_t deviceRemainingRoom(int32_t address) const override;
 

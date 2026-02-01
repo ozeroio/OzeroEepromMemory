@@ -23,21 +23,22 @@ public:
 	/**
 	 * Public constructor.
 	 *
-	 * @param device
+	 * @param byteArray   The byte array to use as backing storage.
+	 * @param deviceSize  The size of the byte array device.
 	 */
 	ExternalByteArrayEeprom(uint8_t *byteArray, int32_t deviceSize);
 
 	/**
 	 * Set byte array.
 	 *
-	 * @param byteArray
+	 * @param byteArray   The byte array to set as backing storage.
 	 */
 	void setByteArray(uint8_t *byteArray);
 
 	/**
 	 * Get byte array.
 	 *
-	 * @return
+	 * @return            The backing byte array.
 	 */
 	uint8_t *getByteArray();
 

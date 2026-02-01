@@ -8,9 +8,9 @@
 
 #include "ExternalMappedEeprom.h"
 
-ExternalMappedEeprom::ExternalMappedEeprom(ExternalEeprom *eemprom, const int32_t startAddress, const int32_t endAddress)
+ExternalMappedEeprom::ExternalMappedEeprom(ExternalEeprom *eeprom, const int32_t startAddress, const int32_t endAddress)
 	: ExternalEeprom(0),
-	  eeprom(eemprom), startAddress(startAddress), endAddress(endAddress) {
+	  eeprom(eeprom), startAddress(startAddress), endAddress(endAddress) {
 }
 
 int32_t ExternalMappedEeprom::writeBlock(const int32_t address, uint8_t *buf, const int32_t len) {

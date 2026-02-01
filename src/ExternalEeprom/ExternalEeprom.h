@@ -40,6 +40,8 @@ public:
      *
      * @param address     The address where the data will be written.
      * @param b           The data to be written.
+     * @return            If >= 0: How many bytes were written (1 if successful).
+     *                    If < 0: Error code. See underlying implementation.
      */
     virtual uint16_t write(int32_t address, uint8_t b);
 
@@ -57,9 +59,9 @@ public:
     /**
      * Reads a byte from the device.
      *
-     * @param address
+     * @param address     The address to read from.
      * @return            If >= 0: The read byte.
-     *                    If < 0: Error code. See underling implementation.
+     *                    If < 0: Error code. See underlying implementation.
      */
     virtual int16_t read(int32_t address);
 
@@ -88,7 +90,7 @@ public:
     /**
      * Gets the page size of the device.
      *
-     * @return
+     * @return            The page size in bytes.
      */
     int32_t getPageSize() const {
         return pageSize;
@@ -97,7 +99,7 @@ public:
     /**
      * Sets the page size of the device.
      *
-     * @param pageSize
+     * @param pageSize    The page size in bytes.
      */
     void setPageSize(const int32_t pageSize) {
         this->pageSize = pageSize;
@@ -106,7 +108,7 @@ public:
 	/**
      * Gets the total size of the device.
      *
-     * @return
+     * @return            The total device size in bytes.
 	 */
 	virtual int32_t getDeviceSize() const {
 		return deviceSize;
@@ -115,7 +117,7 @@ public:
 	/**
      * Sets the size of the device.
      *
-     * @param deviceSize
+     * @param deviceSize  The total device size in bytes.
 	 */
 	void setDeviceSize(const int32_t deviceSize) {
 		this->deviceSize = deviceSize;
@@ -124,7 +126,7 @@ public:
 	/**
      * Gets the number of bits used to address data.
      *
-     * @return
+     * @return            The number of address bits used.
 	 */
 	virtual uint8_t getAddressBitsSize() const {
 		return addressBitsSize;
@@ -133,7 +135,7 @@ public:
 	/**
      * Sets the number of bits used to address data.
      *
-     * @param addressBitsSize
+     * @param addressBitsSize  The number of address bits used.
 	 */
 	void setAddressBitsSize(const uint8_t addressBitsSize) {
 		this->addressBitsSize = addressBitsSize;
@@ -143,16 +145,16 @@ public:
      * Determines the length until first multiple of 'pageSize' of an address
      * so writing always occurs up to 'pageSize' uint8_t boundaries.
      *
-     * @param address
-     * @return
+     * @param address     The current address.
+     * @return            The number of bytes remaining until the next page boundary.
      */
     virtual int32_t pageRemainingRoom(int32_t address) const;
 
     /**
      * Determines the length until end of device.
      *
-     * @param address
-     * @return
+     * @param address     The current address.
+     * @return            The number of bytes remaining from address to end of device.
      */
 	virtual int32_t deviceRemainingRoom(int32_t address) const;
 
