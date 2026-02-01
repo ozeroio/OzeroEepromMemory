@@ -1,5 +1,5 @@
 /**
- * Ozeroio - External eeprom formation.
+ * Ozero - External eeprom formation.
  *
  * To use > 1 eeprom on the same bus as if they were 1.
  *

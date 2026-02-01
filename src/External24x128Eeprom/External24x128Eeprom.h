@@ -1,13 +1,13 @@
 /**
- * Ozeroio - External 24x128 eeprom
+ * Ozero - External 24x128 eeprom
  *
  * This an implementation of 24x128 eeprom.
  *
  * @author Dalmir da Silva <dalmirdasilva@gmail.com>
  */
 
-#ifndef OZEROIO_EXTERNAL_24X128_EEPROM_H
-#define OZEROIO_EXTERNAL_24X128_EEPROM_H 1
+#ifndef OZERO_MEMORY_EXTERNAL_24X128_EEPROM_H
+#define OZERO_MEMORY_EXTERNAL_24X128_EEPROM_H 1
 
 #include <ExternalEeprom/ExternalEeprom.h>
 
@@ -28,4 +28,4 @@ public:
 	explicit External24x128Eeprom(uint8_t deviceAddress);
 };
 
-#endif// OZEROIO_EXTERNAL_24X128_EEPROM_H
+#endif// OZERO_MEMORY_EXTERNAL_24X128_EEPROM_H

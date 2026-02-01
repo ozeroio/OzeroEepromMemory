@@ -1,5 +1,5 @@
 /**
- * Ozeroio - External 24x32 eeprom
+ * Ozero - External 24x32 eeprom
  *
  * This an implementation of 24x32 eeprom.
  *

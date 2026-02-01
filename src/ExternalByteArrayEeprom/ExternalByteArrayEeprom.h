@@ -1,13 +1,13 @@
 /**
- * Ozeroio - External Virtual eeprom
+ * Ozero - External Virtual eeprom
  *
  * This an implementation of eeprom using byte array.
  *
  * @author Dalmir da Silva <dalmirdasilva@gmail.com>
  */
 
-#ifndef OZEROIO_EXTERNAL_BYTE_ARRAY_EEPROM_H
-#define OZEROIO_EXTERNAL_BYTE_ARRAY_EEPROM_H 1
+#ifndef OZERO_MEMORY_EXTERNAL_BYTE_ARRAY_EEPROM_H
+#define OZERO_MEMORY_EXTERNAL_BYTE_ARRAY_EEPROM_H 1
 
 #include <ExternalEeprom/ExternalEeprom.h>
 #include <stdint.h>
@@ -43,7 +43,6 @@ public:
 	uint8_t *getByteArray();
 
 
-
 protected:
 	/**
 	 * Writes a block of bytes separately by pages to the device.
@@ -69,4 +68,4 @@ protected:
 	int32_t readBlock(int32_t address, uint8_t *buf, int32_t len) override;
 };
 
-#endif// OZEROIO_EXTERNAL_BYTE_ARRAY_EEPROM_H
+#endif// OZERO_MEMORY_EXTERNAL_BYTE_ARRAY_EEPROM_H

@@ -1,19 +1,24 @@
 /**
- * Ozeroio - External eeprom formation.
+ * Ozero - External eeprom formation.
  *
  * To use > 1 eeprom on the same bus as if they were 1.
  *
  * @author Dalmir da Silva <dalmirdasilva@gmail.com>
  */
 
-#ifndef OZEROIO_EXTERNAL_EEPROM_FORMATION_H
-#define OZEROIO_EXTERNAL_EEPROM_FORMATION_H 1
+#ifndef OZERO_MEMORY_EXTERNAL_EEPROM_FORMATION_H
+#define OZERO_MEMORY_EXTERNAL_EEPROM_FORMATION_H 1
 
 #include <ExternalEeprom/ExternalEeprom.h>
 #include <stdint.h>
 
 /**
- * What is a EepromFormation?
+ * An EEPROM Formation allows multiple physical EEPROM devices on the same I2C bus
+ * to be treated as a single, larger contiguous memory device.
+ *
+ * This class uses hardware address multiplexing (A2, A1, A0 pins) to dynamically
+ * select different chips based on the memory address being accessed, creating
+ * a unified address space across all devices in the formation.
  */
 class ExternalEepromFormation : public ExternalEeprom {
 
@@ -43,4 +48,4 @@ public:
 	uint8_t dynamicAddress(int32_t memoryAddress) const override;
 };
 
-#endif// OZEROIO_EXTERNAL_EEPROM_FORMATION_H
+#endif// OZERO_MEMORY_EXTERNAL_EEPROM_FORMATION_H

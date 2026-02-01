@@ -1,5 +1,5 @@
 /**
- * Ozeroio - External Virtual eeprom
+ * Ozero - External Virtual eeprom
  *
  * This an implementation of eeprom using byte array.
  *

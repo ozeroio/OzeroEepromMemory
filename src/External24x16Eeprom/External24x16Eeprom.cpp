@@ -1,8 +1,8 @@
 /**
- * Ozeroio - External 24x16 eeprom
+ * Ozero - External 24x16 eeprom
  *
  * This an implementation of 24x16 eeprom.
- * 
+ *
  * @author Dalmir da Silva <dalmirdasilva@gmail.com>
  */
 

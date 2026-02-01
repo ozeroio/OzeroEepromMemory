@@ -1,13 +1,13 @@
 /**
- * Ozeroio - External eeprom
+ * Ozero - External eeprom
  *
  * This is a class that maps a ExternalEeprom from start to end addresses.
  *
  * @author Dalmir da Silva <dalmirdasilva@gmail.com>
  */
 
-#ifndef OZEROIO_EXTERNAL_MAPPED_EEPROM_H
-#define OZEROIO_EXTERNAL_MAPPED_EEPROM_H 1
+#ifndef OZERO_MEMORY_EXTERNAL_MAPPED_EEPROM_H
+#define OZERO_MEMORY_EXTERNAL_MAPPED_EEPROM_H 1
 
 #include <ExternalEeprom/ExternalEeprom.h>
 #include <stdint.h>
@@ -89,4 +89,4 @@ protected:
 	int32_t readBlock(int32_t address, uint8_t *buf, int32_t len) override;
 };
 
-#endif// OZEROIO_EXTERNAL_MAPPED_EEPROM_H
+#endif// OZERO_MEMORY_EXTERNAL_MAPPED_EEPROM_H

@@ -1,12 +1,14 @@
-#ifndef OZEROIO_OZERO_H
-#define OZEROIO_OZERO_H
+#ifndef OZERO_MEMORY_OZERO_H
+#define OZERO_MEMORY_OZERO_H
 
-#ifndef ozero_max
-#define ozero_max(x, y) (((x) > (y)) ? (x) : (y))
-#endif
+template<typename T>
+constexpr const T &ozero_max(const T &x, const T &y) {
+	return (x > y) ? x : y;
+}
 
-#ifndef ozero_min
-#define ozero_min(x, y) (((x) < (y)) ? (x) : (y))
-#endif
+template<typename T>
+constexpr const T &ozero_min(const T &x, const T &y) {
+	return (x < y) ? x : y;
+}
 
-#endif // OZEROIO_OZERO_H
+#endif// OZERO_MEMORY_OZERO_H

@@ -1,13 +1,13 @@
 /**
- * Ozeroio - External 24x16 eeprom
+ * Ozero - External 24x16 eeprom
  *
  * This an implementation of 24X16 eeprom.
- * 
+ *
  * @author Dalmir da Silva <dalmirdasilva@gmail.com>
  */
 
-#ifndef OZEROIO_EXTERNAL_24X16_EEPROM_H
-#define OZEROIO_EXTERNAL_24X16_EEPROM_H 1
+#ifndef OZERO_MEMORY_EXTERNAL_24X16_EEPROM_H
+#define OZERO_MEMORY_EXTERNAL_24X16_EEPROM_H 1
 
 #include <ExternalEeprom/ExternalEeprom.h>
 
@@ -43,4 +43,4 @@ public:
 	uint8_t dynamicAddress(int32_t memoryAddress) const override;
 };
 
-#endif// OZEROIO_EXTERNAL_24X16_EEPROM_H
+#endif// OZERO_MEMORY_EXTERNAL_24X16_EEPROM_H

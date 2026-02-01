@@ -9,7 +9,7 @@
             "name": "PlatformIO",
             "includePath": [
                 "/home/dalmir/storage/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/src",
-                "/home/dalmir/storage/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/test/psram",
+                "/home/dalmir/storage/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/test/scan",
                 "/home/dalmir/storage/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/.pio/libdeps/megaatmega2560/OzeroDevice/include",
                 "/home/dalmir/storage/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/.pio/libdeps/megaatmega2560/OzeroDevice/src",
                 "/home/dalmir/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
@@ -25,7 +25,7 @@
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
                     "/home/dalmir/storage/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/src",
-                    "/home/dalmir/storage/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/test/psram",
+                    "/home/dalmir/storage/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/test/scan",
                     "/home/dalmir/storage/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/.pio/libdeps/megaatmega2560/OzeroDevice/include",
                     "/home/dalmir/storage/work/ozero/libs/github.com/ozeroio/OzeroEepromMemory/.pio/libdeps/megaatmega2560/OzeroDevice/src",
                     "/home/dalmir/.platformio/packages/framework-arduino-avr/libraries/SPI/src",

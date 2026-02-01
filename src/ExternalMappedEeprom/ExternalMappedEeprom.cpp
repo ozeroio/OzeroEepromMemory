@@ -1,5 +1,5 @@
 /**
- * Ozeroio - External eeprom
+ * Ozero - External eeprom
  *
  * This is a class that maps a ExternalEeprom from start to end addresses.
  *
