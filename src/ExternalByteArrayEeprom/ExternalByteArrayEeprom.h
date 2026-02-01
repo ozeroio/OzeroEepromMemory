@@ -49,18 +49,22 @@ protected:
 	 * Writes a block of bytes separately by pages to the device.
 	 * All bytes during a page write operation must reside on the same page.
 	 *
-	 * @param address
-	 * @param buffer
-	 * @param len
+	 * @param address     The address where the data will be written.
+	 * @param buf         The buffer containing data to write.
+	 * @param len         The length of data to write.
+	 * @return            If >= 0: How many bytes were written.
+	 *                    If < 0: Error code.
 	 */
 	int32_t writeBlock(int32_t address, uint8_t *buf, int32_t len) override;
 
 	/**
 	 * Reads a block of bytes from the device.
 	 *
-	 * @param address
-	 * @param buf
-	 * @param len
+	 * @param address     The address where the data will be read from.
+	 * @param buf         The buffer to store read data.
+	 * @param len         The length of data to read.
+	 * @return            If >= 0: How many bytes were read.
+	 *                    If < 0: Error code.
 	 */
 	int32_t readBlock(int32_t address, uint8_t *buf, int32_t len) override;
 };

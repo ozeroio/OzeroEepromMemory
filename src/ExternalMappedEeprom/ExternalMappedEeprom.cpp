@@ -7,10 +7,19 @@
  */
 
 #include "ExternalMappedEeprom.h"
+#include <ozero.h>
 
 ExternalMappedEeprom::ExternalMappedEeprom(ExternalEeprom *eeprom, const int32_t startAddress, const int32_t endAddress)
 	: ExternalEeprom(0),
 	  eeprom(eeprom), startAddress(startAddress), endAddress(endAddress) {
+	if (eeprom) {
+
+		// Inherit properties from the underlying eeprom
+		setPageSize(eeprom->getPageSize());
+		setAddressSize(eeprom->getAddressSize());
+		setWriteCycleTime(eeprom->getWriteCycleTime());
+		setAddressBitsSize(eeprom->getAddressBitsSize());
+	}
 }
 
 int32_t ExternalMappedEeprom::writeBlock(const int32_t address, uint8_t *buf, const int32_t len) {
@@ -36,6 +45,9 @@ int32_t ExternalMappedEeprom::readBlock(const int32_t address, uint8_t *buf, con
 }
 
 int32_t ExternalMappedEeprom::pageRemainingRoom(int32_t address) const {
+	if (!eeprom) {
+		return 0;
+	}
 	return eeprom->pageRemainingRoom(startAddress + address);
 }
 

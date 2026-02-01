@@ -10,15 +10,20 @@
 #include <Arduino.h>
 
 ExternalEepromFormation::ExternalEepromFormation(ExternalEeprom *eeprom, uint8_t size, uint8_t hardwareAddressMask)
-	: ExternalEeprom(eeprom->getAddress()), eeprom(eeprom), size(size), hardwareAddressMask(hardwareAddressMask) {
-	setDeviceSize(eeprom->getDeviceSize() * size);
-	setPageSize(eeprom->getPageSize());
-	setAddressSize(eeprom->getAddressSize());
-	setWriteCycleTime(eeprom->getWriteCycleTime());
-	setAddressBitsSize(eeprom->getAddressBitsSize());
+	: ExternalEeprom(eeprom ? eeprom->getAddress() : 0), eeprom(eeprom), size(size), hardwareAddressMask(hardwareAddressMask) {
+	if (eeprom) {
+		setDeviceSize(eeprom->getDeviceSize() * size);
+		setPageSize(eeprom->getPageSize());
+		setAddressSize(eeprom->getAddressSize());
+		setWriteCycleTime(eeprom->getWriteCycleTime());
+		setAddressBitsSize(eeprom->getAddressBitsSize());
+	}
 }
 
 uint8_t ExternalEepromFormation::dynamicAddress(int32_t memoryAddress) const {
+	if (!eeprom) {
+		return 0;
+	}
 	uint8_t eepromDynamicAddress = eeprom->dynamicAddress(memoryAddress);
 	return (eepromDynamicAddress & ~hardwareAddressMask) | ((memoryAddress >> getAddressBitsSize()) & hardwareAddressMask);
 }

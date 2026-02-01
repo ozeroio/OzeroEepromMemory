@@ -7,6 +7,7 @@
  */
 
 #include "ExternalEeprom.h"
+#include <ozero.h>
 
 ExternalEeprom::ExternalEeprom(const uint8_t deviceAddress)
         : EepromBasedWiredDevice(0x50 | deviceAddress),
@@ -101,6 +102,9 @@ int32_t ExternalEeprom::setBytes(const int32_t address, const uint8_t b, const i
 }
 
 int32_t ExternalEeprom::pageRemainingRoom(const int32_t address) const {
+    if (pageSize <= 0) {
+        return 0;
+    }
     return pageSize - (address % pageSize);
 }
 

@@ -52,7 +52,7 @@ public:
      * @param buffer      The data to be written.
      * @param len         The amount of data to be written.
      * @return            If >= 0: How many bytes were written.
-     *                    If < 0: Error code. See underling implementation.
+     *                    If < 0: Error code. See underlying implementation.
      */
     virtual int32_t writeBytes(int32_t address, uint8_t *buf, int32_t len);
 
@@ -72,7 +72,7 @@ public:
      * @param buffer      The data to be read.
      * @param len         The amount of data to be read.
      * @return            If >= 0: How many bytes were read.
-     *                    If < 0: Error code. See underling implementation.
+     *                    If < 0: Error code. See underlying implementation.
      */
     virtual int32_t readBytes(int32_t address, uint8_t *buf, int32_t len);
 
@@ -83,7 +83,7 @@ public:
      * @param buffer      The data to be set.
      * @param len         The amount of data to be set.
      * @return            If >= 0: How many bytes were set.
-     *                    If < 0: Error code. See underling implementation.
+     *                    If < 0: Error code. See underlying implementation.
      */
     virtual int32_t setBytes(int32_t address, uint8_t b, int32_t len);
 
